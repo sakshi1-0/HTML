@@ -1,0 +1,158 @@
+<!DOCTYPE>
+<html>
+
+  <head>
+    <title>Assignment 23</title>
+  </head>
+  <style>
+    body {
+      background-color: indigo;
+    }
+
+    button {
+      width: 100px;
+      height: 30px;
+     border: 3px solid rgb(150, 235, 247);      
+      color:red;      
+      outline: none;
+    }
+    #stopwatch {
+      border-radius: 30px;
+      font-size: 100px;
+      position: absolute;
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%, -55%);
+      color: #71d1ee;
+    }
+    #buttons {
+      padding-top: 40px;
+      position: absolute;
+
+      top: 55%;
+      left: 48.4%;
+      transform: translate(-51.6%, -45%);
+    }
+    #buttons li {
+      display: inline;
+      padding-left: 10px;
+    }
+
+    #start {
+      background-color: gray;
+
+      font-size: 19px;
+      font-weight: bolder;
+      height: 38px;
+      width: 148px;
+    }
+
+    #stop {
+      background-color: gray;
+      font-size: 19px;
+      font-weight: bolder;
+      height: 38px;
+      width: 148px;
+    }
+    #reset {
+      background-color: gray;
+      font-size: 19px;
+      font-weight: bolder;
+      height: 38px;
+      width: 148px;
+    }
+
+    #Show {
+      background: rgb(247, 183, 99);
+      margin: 33%;
+      padding-top: 16px;
+      text-align: center;
+      font-weight: bolder;
+      font-size: 54px;
+      color: rgb(255 10 10);
+      border: 8px solid blueviolet;
+     
+    }
+  </style>
+  <body>
+    <div id="stopwatch">00:00:00:00</div>
+
+    <ul id="buttons">
+      <li><button id="start" onclick="startTimer()">Start</button></li>
+      <li><button id="stop" onclick="stopTimer()">Stop</button></li>
+      <li><button id="reset" onclick="resetTimer()">Reset</button></li>
+    </ul>
+
+    <div id="Show" class="Showinfo"></div>
+    <script>
+      var timer = document.getElementById("stopwatch");
+      var show = document.getElementsByClassName("Showinfo");
+      var hr = 0;
+      var min = 0;
+      var sec = 0;
+      var minsec = 0;
+      let stoptime = true;
+
+      function startTimer() {
+        if (stoptime == true) {
+          stoptime = false;
+          timerStart();
+        }
+      }
+      function stopTimer() {
+        if (stoptime == false) {
+          stoptime = true;
+        }
+
+        document.getElementById("Show").innerHTML =
+          "The Time is " + hr + ":" + min + ":" + sec + ":" + minsec;
+      }
+
+      function timerStart() {
+        if (stoptime == false) {
+          sec = parseInt(sec);
+          min = parseInt(min);
+          hr = parseInt(hr);
+          minsec = parseInt(minsec);
+          minsec += 1;
+          if (minsec == 10) {
+            sec = sec + 1;
+            minsec = 0;
+          }
+          if (sec == 60) {
+            min += 1;
+            sec = 0;
+          }
+          if (min == 60) {
+            hr += 1;
+            min = 0;
+            sec = 0;
+          }
+          if (minsec < 10 || minsec == 0) {
+            minsec = "0" + minsec;
+          }
+
+          if (sec < 10 || sec == 0) {
+            sec = "0" + sec;
+          }
+          if (min < 10 || min == 0) {
+            min = "0" + min;
+          }
+          if (hr < 10 || hr == 0) {
+            hr = "0" + hr;
+          }
+          timer.innerHTML = hr + ":" + min + ":" + sec + ":" + minsec;
+          setTimeout("timerStart()", 100);
+        }
+      }
+      function resetTimer() {
+        timer.innerHTML = "00:00:00:00";
+        stoptime = true;
+        hr = 0;
+        min = 0;
+        sec = 0;
+        minsec = 0;
+      }
+    </script>
+  </body>
+</html>
