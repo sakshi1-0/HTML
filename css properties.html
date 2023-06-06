@@ -1,0 +1,66 @@
+<!DOCTYPE>
+<html>
+ <head>
+        <title>Assignent 18</title>
+    <style>
+
+ body{
+     background-color: wheat;
+ }
+
+ h1{
+     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;   
+ }
+
+ div{
+     width: 250px;
+     height:250px;
+     border-style:hidden;
+     border-radius: 5px;
+     background-color: red;
+     position:relative;
+     box-shadow: 10px 15px 20px black;
+     animation-name: ani;
+     animation-duration: 10s;
+     animation-delay: 2s;
+     animation-iteration-count: 10;
+     animation-direction: alternate;
+     transition: width 2s, height 2s,transform 2s ease-in,
+      background-color 2s ease ;
+ }
+ div:hover {
+  width: 250px;
+  height: 250px;
+  transform: scale(1.2,1.2) rotate(180deg);
+}
+
+ @keyframes ani {
+     0% {background-color:crimson;
+    left: 0px ;top: 0px;}
+
+    25% {background-color:lightsalmon;
+    left: 200px; top:0px;}
+
+    50%{background-color:#00b7ff;
+    left: 200px; top:200px;}
+
+    75% {background-color:mediumorchid;
+    left: 0px; top:200px;}
+
+    100%{background-color:rgb(255, 0, 0);
+    left: 0px ; top:0px;}
+    }
+     
+
+    </style>
+  </head>
+  <body>
+  </body>
+  <center>
+      <h1>CSS PROPERTIES</h1>
+      <div></div>
+   <center>   
+  </body>
+
+</html>
