@@ -1,0 +1,53 @@
+<html>
+<head>
+<style>
+div {
+  width:100px;
+  height:100px;
+  border:5px dashed black;
+  background-color:violet;
+  margin: 35px 550px;
+  background-color: red;
+  position: relative;
+  animation-name: exam;
+  animation-duration: 5s;
+  transition: width 3s,height 3s ,transform 3s;
+ 
+}
+
+div:hover{
+              
+			  width:200px;
+			  height:200px;
+			  transform: rotate(180deg);
+			  		   
+			   }
+body   {
+           background-color:skyblue;
+		   text-align:center;   
+           font-size:20px;		   
+		   
+       }
+	   
+
+
+@keyframes exam {
+         0% {background-color:red; left:0px; top:0px;}
+		 25% {background-color:grey; left:100px; top:0px;}
+		 50% {background-color:blue; left:100px; top:100px;}
+		 75% {background-color:green; left:0px; top:100px;}
+		 100% {background-color:red; left:0px; top:0px;}
+       }	
+</style>
+</head>
+<body >
+
+<h1><u>Animation</u></h1>
+<p><b>This is an example of animation</b></p>
+<div></div>
+
+
+
+</body>
+
+</html>
