@@ -1,0 +1,54 @@
+<!DOCTYPE >
+ <html>
+ <head>
+ <title>Assignment 13</title>
+ </head>
+ <style>
+ body{
+background-color: goldenrod;
+ }
+ button {
+ margin: 60px;
+ padding: 20px 20px;
+ background-color:firebrick ;
+ color: white;
+ border: 5px solid cornsilk;
+ font-style: oblique;
+  font-size: 30px;
+  border-radius:5px;
+ }
+ 
+ h1{
+ text-align: center;
+ font-size: 40px;
+ background-color: #d6d6ff;
+ }
+ </style>
+
+ <body>
+ <button onclick="openWindow()">Open Google</button>
+ <br>
+
+ <button onclick="Alert()">Alert window</button>
+ <br>
+
+ <button onclick="Prompt()">Prompt window</button>
+
+
+ <h1 id="Name"></h1>
+
+ <script>
+ function openWindow() {
+
+ window.open("https://www.google.com");
+ }
+ function Alert() {
+ window.alert("You are good to Go");
+ }
+ function Prompt() {
+ let name = window.prompt("What is your name ", "sakshi");
+ document.getElementById("Name").innerHTML = "Well done " + name;
+ }
+ </script>
+ </body>
+ </html>
